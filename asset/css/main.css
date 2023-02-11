@@ -1,0 +1,236 @@
+:root{
+    --prymary: 
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+}
+.header{
+    background-image: linear-gradient(0,#fe6233,#fb5533);
+    height: 120px;
+}
+.header__navbar{
+    
+    display: flex;
+    justify-content: space-between;
+}
+.header__navbar-list{
+    list-style: none;
+    padding-left: 0;
+}
+.header__navbar-list>li{
+    display: inline-block;
+    font-size: 1.4rem;
+    margin: 0 10px;
+}
+
+.header__navbar-list>li>a{
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 300;
+}
+.header__navbar-item:hover > a{
+    opacity: 0.7;
+}
+.header__navbar-item{
+    position: relative;
+}
+.header__navbar-item--strong{
+    font-weight: 500 !important;
+}
+.header__navbar-item--separate::after{
+    position: absolute;
+    content: "";
+    display: block;
+    border-left: 1px solid#FB9086;
+    height: 15px;
+    top: 50%;
+    right: -11px;
+    transform: translateY(-50%);
+}
+
+.header__navbar-icon{
+    font-size: 1.8rem;
+    margin: 0 0.6rem;
+}
+.header__navbar-item,
+.header__navbar-item-link,
+.header__navbar-icon{
+    display: inline-flex;
+    align-items: center;
+}
+.header__navbar-label--no-pointer:hover{
+    cursor: text;
+    color: var(--white-color) !important;
+}
+.header__qr{
+    position: absolute;
+    background-color: var(--white-color);
+    width: 190px;
+    left: 0;
+    top: 140%;
+    padding: 10px;
+    border-radius: 2px;
+    display: none;
+    animation: fadeIn-qr ease .5s ;
+}
+.header__qr::before{
+    content: "";
+    height: 30px;
+    position: absolute;
+    width: 190px;
+    left: 0;
+    top: -15px;
+    display: block;
+}
+.header__qr-apps{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+}
+.header__download-img:nth-child(1){
+    margin-left: 5px;
+}
+.header__download-img:nth-child(2){
+    margin-right: 5px;
+}
+.header_qr-img{
+    width: 100%;
+}
+.header__qr-apps--img{
+    width: 100%;
+    height: 18px;
+}
+.header__navbar-show-qr:hover .header__qr{
+    display: block;
+}
+@keyframes fadeIn-qr {
+    from{
+        opacity: 0;
+        transform: translateY(-10%);
+    }to{
+        opacity: 100%;
+        transform: translateY(0);
+
+    }
+    
+}
+/* Header notifition */
+
+.header__notify{
+    background-color: var(--white-color);
+    width: 404px;
+    position: absolute;
+    right: 0;
+    top: 180%;
+    border-radius: 2px;
+    border: 1px solid #D3D3D3;
+    display: none;
+    animation: fadeIn-qr ease .3s;
+}
+
+.header__notify-header{
+    border-bottom: 1px solid #f2f2f2;
+    height: 40px;
+    background-color: var(--white-color);
+}
+.header__notify-header h3{
+    margin: 0 0 0 12px;
+    line-height: 40px;
+    font-size: 1.4rem;
+    color: #545454;
+    font-weight: 400;
+}
+.header__notify-list{
+    list-style: none;
+    padding: 0;
+}
+
+.header__notify-item{
+    padding: 10px 11px;
+    background-color: #f7f7f7;
+}
+
+.header__notify-img{
+    object-fit: contain;
+    width: 48px;
+    margin-left: 10px;
+}
+
+.header__notify-link{
+    text-decoration: none;
+    margin-left: -6px;
+    display: flex;
+    justify-content: space-between;
+}
+.header__notify-info{
+    margin: 0 10px;
+    flex: 1;
+}
+.header__notify-info p{
+    margin: 5px;
+    line-height: 1.6;
+}
+
+.header__notify-name{
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.header__notify-description{
+    color: var(--text-color);
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.header__notify-footer{
+    border-top: 1px solid #f2f2f2;
+    text-align: center;
+    height: 40px;
+}
+.header__notify-footer-xtc{
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 40px;
+    color: var(--text-color);
+    padding: 10px 10px;
+}
+.header__notify-item--viewed{
+    background-color: rgba(238, 75, 43, 0.08);
+}
+.header__notify-item--viewed:hover{
+    background-color: #f7f7f7;
+}
+.header__notify::before{
+    content: "";
+    position: absolute;
+    border-width: 20px 30px;
+    border-style: solid;
+    border-color:  transparent transparent #fff transparent;
+    right: 8px;
+    top: -32px;
+    display: block;
+}
+.header__navbar-item-show-notify:hover .header__notify{
+    display: block;
+}
+
+/* Sign in */
+.modal{
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+.modal__body{
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    border-radius: 4px;
+    background-color: #fff;
+}
