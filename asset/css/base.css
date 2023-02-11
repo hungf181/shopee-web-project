@@ -25,3 +25,35 @@ html{
     display: flex;
     flex-wrap: wrap;
 }
+
+.modal{
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.modal__body{
+    margin: auto;
+    
+}
+
+.btn{
+    min-width: 130px;
+    font-size: 1.4rem;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+}
+.btn.btn--primary{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.btn:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
