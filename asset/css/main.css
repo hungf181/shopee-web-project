@@ -974,10 +974,12 @@ i.home-product-item__action-like-icon-fill{
     justify-content: center;
     align-items: center;
     list-style: none;
+    padding: 0;
 }
 
 .home-pagination__item{
     margin: 0 16px;
+    
 }
 
 .home-pagination__link{
