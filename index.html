@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/css/grid.css">
     <link rel="stylesheet" href="./asset/css/base.css">
     <link rel="stylesheet" href="./asset/css/main.css">
+    <link rel="stylesheet" href="./asset/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,8 +20,8 @@
 </head>
 <body>
     <header class="header">
-        <div class="grid">
-            <nav class="header__navbar">
+        <div class="grid wide">
+            <nav class="header__navbar hide-on-mobile-tablet">
                 <ul class="header__navbar-list">
                     <li class="header__navbar-item header__navbar-item--separate header__navbar-show-qr">
                         <a href="#" >
@@ -159,6 +162,9 @@
             </nav>
             <!--Header wwith search-->
             <div class="header-with-search">
+                <label for="mobile-check" class="header__mobile-search">
+                    <i class="header__mobile-icon fa-solid fa-magnifying-glass"></i>
+                </label>
                 <div class="header__logo">
                     <a href="/" class="header__logo-link">
                         <svg viewBox="0 0 192 65" class="header__logo-img">
@@ -170,7 +176,7 @@
                         </svg>
                     </a>
                 </div>
-
+                <input type="checkbox" hidden id="mobile-check" class="mobile-check-search">
                 <div class="header__search">
                     <div class="header__search-text">
                         <input class="header__search-input" type="text" placeholder="Tìm trong shop này!">
@@ -360,12 +366,26 @@
                 </div>
             </div>
         </div>
+        <ul class="header__sort-bar">
+            <li class="header__sort-item">
+                <a href="" class="header__sort-link">Liên quan</a>
+            </li>
+            <li class="header__sort-item">
+                <a href="" class="header__sort-link">Mới nhất</a>
+            </li>
+            <li class="header__sort-item">
+                <a href="" class="header__sort-link">Bán chạy</a>
+            </li>
+            <li class="header__sort-item">
+                <a href="" class="header__sort-link">Giá</a>
+            </li>
+        </ul>
     </header>
 
     <div class="app-container">
-        <div class="grid">
-            <div class="grid__row app-content">
-                <div class="grid__column-2">
+        <div class="grid wide">
+            <div class="row sm-gutter app-content">
+                <div class="col l-2 m-0 c-0">
                     <nav class="category">
                         <h3 class="category__heading">
                             <i class="category__heading-icon fa-solid fa-list-ul"></i>
@@ -396,8 +416,8 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="grid__column-10">
-                    <div class="home-filter">
+                <div class="col l-10 m-12 c-12">
+                    <div class="home-filter hide-on-mobile-tablet">
                         <span class="home-filter__label">Sắp xếp theo</span>
                         <button class="home-filter_btn btn">Phổ biến</button>
                         <button class="home-filter_btn btn btn--primary">Mới nhất</button>
@@ -430,9 +450,34 @@
                             </div>
                         </div>
                     </div>
+                    <nav class="mobile-category">
+                        <ul class="mobile-category__list">
+                            <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Đồ gia dụng nhanh</a>
+                            </li>
+                            <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Tổ ấm gia đình</a>
+                            </li>
+                            <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Thiết bị điện tử</a>
+                            </li>
+                            <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Trang trí nhà bếp</a>
+                            </li>
+                            <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Quần áo đi ngủ</a>
+                            </li>
+                            <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Dụng cụ & thiết bị di động</a>
+                            </li>
+                            <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Vật liệu cơ khí</a>
+                            </li>
+                        </ul>
+                    </nav>
                     <div class="home-product">
-                        <div class="grid__row">
-                            <div class="grid__column-2-4">
+                        <div class="row sm-gutter">
+                            <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="#">
                                     <div class="home-product-item__img" style="background-image: url('./asset/img/sp13.jpg');">
                                     </div>
@@ -469,7 +514,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="#">
                                     <div class="home-product-item__img" style="background-image: url('./asset/img/SP1.jpg');">
                                     </div>
@@ -506,7 +551,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="#">
                                     <div class="home-product-item__img" style="background-image: url('./asset/img/SP2.jpg');">
                                     </div>
@@ -543,7 +588,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="#">
                                     <div class="home-product-item__img" style="background-image: url('./asset/img/SP3.jpg');">
                                     </div>
@@ -580,7 +625,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="#">
                                     <div class="home-product-item__img" style="background-image: url('./asset/img/sp8.jpeg');">
                                     </div>
@@ -617,7 +662,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="#">
                                     <div class="home-product-item__img" style="background-image: url('./asset/img/sp10.jpg');">
                                     </div>
@@ -654,7 +699,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="#">
                                     <div class="home-product-item__img" style="background-image: url('./asset/img/sp9.png');">
                                     </div>
@@ -691,7 +736,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="#">
                                     <div class="home-product-item__img" style="background-image: url('./asset/img/sp11.jpg');">
                                     </div>
@@ -728,7 +773,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="#">
                                     <div class="home-product-item__img" style="background-image: url('./asset/img/sp12.jpg');">
                                     </div>
@@ -765,11 +810,196 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="#">
                                     <div class="home-product-item__img" style="background-image: url('./asset/img/SpContent3.png');">
                                     </div>
                                     <h4 class="home-product-item__name">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">2.200.000đ</span>
+                                        <span class="home-product-item__price-current">1.200.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__action-like home-product-item__action--liked">
+                                            <i class="home-product-item__action-like-icon-no fa-regular fa-heart"></i>
+                                            <i class="home-product-item__action-like-icon-fill fa-solid fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__action-rating">
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__action-sold">88 Đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favorite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Yêu thích
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-pacent">16%</span>
+                                        <span class="home-product-item__label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col l-2-4 m-4 c-6">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url('./asset/img/SP2.jpg');">
+                                    </div>
+                                    <h4 class="home-product-item__name">Mật ong tinh khiết lấy từ rừng núi tây bắc</h4>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">2.200.000đ</span>
+                                        <span class="home-product-item__price-current">1.200.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__action-like home-product-item__action--liked">
+                                            <i class="home-product-item__action-like-icon-no fa-regular fa-heart"></i>
+                                            <i class="home-product-item__action-like-icon-fill fa-solid fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__action-rating">
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__action-sold">88 Đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favorite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Yêu thích
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-pacent">16%</span>
+                                        <span class="home-product-item__label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col l-2-4 m-4 c-6">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url('./asset/img/SP3.jpg');">
+                                    </div>
+                                    <h4 class="home-product-item__name">Hạt điều rang muối, ủ lâu trong nhiều tuần thơm ngon bổ dưỡng</h4>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">2.200.000đ</span>
+                                        <span class="home-product-item__price-current">1.200.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__action-like home-product-item__action--liked">
+                                            <i class="home-product-item__action-like-icon-no fa-regular fa-heart"></i>
+                                            <i class="home-product-item__action-like-icon-fill fa-solid fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__action-rating">
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__action-sold">88 Đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favorite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Yêu thích
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-pacent">16%</span>
+                                        <span class="home-product-item__label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col l-2-4 m-4 c-6">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url('./asset/img/sp8.jpeg');">
+                                    </div>
+                                    <h4 class="home-product-item__name">Pin sạc dự phòng dung lượng cao, giá rẻ</h4>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">2.200.000đ</span>
+                                        <span class="home-product-item__price-current">1.200.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__action-like home-product-item__action--liked">
+                                            <i class="home-product-item__action-like-icon-no fa-regular fa-heart"></i>
+                                            <i class="home-product-item__action-like-icon-fill fa-solid fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__action-rating">
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__action-sold">88 Đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favorite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Yêu thích
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-pacent">16%</span>
+                                        <span class="home-product-item__label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col l-2-4 m-4 c-6">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url('./asset/img/sp10.jpg');">
+                                    </div>
+                                    <h4 class="home-product-item__name">Nồi cơm điện nấu cơm ngon, chính hãng, giá rẻ, đa dạng mẫu mã</h4>
+                                    <div class="home-product-item__price">
+                                        <span class="home-product-item__price-old">2.200.000đ</span>
+                                        <span class="home-product-item__price-current">1.200.000đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <span class="home-product-item__action-like home-product-item__action--liked">
+                                            <i class="home-product-item__action-like-icon-no fa-regular fa-heart"></i>
+                                            <i class="home-product-item__action-like-icon-fill fa-solid fa-heart"></i>
+                                        </span>
+                                        <div class="home-product-item__action-rating">
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="home-product-item__action-rating--gold fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__action-sold">88 Đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__origin">
+                                        <span class="home-product-item__brand">Whoo</span>
+                                        <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                    </div>
+                                    <div class="home-product-item__favorite">
+                                        <i class="fa-solid fa-check"></i>
+                                        Yêu thích
+                                    </div>
+                                    <div class="home-product-item__sale-off">
+                                        <span class="home-product-item__sale-off-pacent">16%</span>
+                                        <span class="home-product-item__label">GIẢM</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col l-2-4 m-4 c-6">
+                                <a class="home-product-item" href="#">
+                                    <div class="home-product-item__img" style="background-image: url('./asset/img/sp9.png');">
+                                    </div>
+                                    <h4 class="home-product-item__name">Miễn Phí 1 Tháng] Sim Data 6GB/ngày - 180 GB/tháng Độc Quyền VIETNAMOBILE - SHOPEE | Shopee Việt Nam</h4>
                                     <div class="home-product-item__price">
                                         <span class="home-product-item__price-old">2.200.000đ</span>
                                         <span class="home-product-item__price-current">1.200.000đ</span>
@@ -846,9 +1076,9 @@
     </div>
 
     <footer class="footer">
-        <div class="grid">
-            <div class="grid__row footer-top">
-                <div class="grid__column-2-4">
+        <div class="grid wide">
+            <div class="row footer-top">
+                <div class="col l-2-4 m-4 c-6">
                     <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
                     <ul class="footer-list">
                         <li class="footer__item">
@@ -862,7 +1092,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                     <h3 class="footer__heading">GIỚI THIỆU</h3>
                     <ul class="footer-list">
                         <li class="footer__item">
@@ -876,7 +1106,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                     <h3 class="footer__heading">Danh Mục</h3>
                     <ul class="footer-list">
                         <li class="footer__item">
@@ -896,7 +1126,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                     <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
                     <ul class="footer-list">
                         <li class="footer__item">
@@ -919,7 +1149,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="grid__column-2-4">
+                <div class="col l-2-4 m-4 c-6">
                     <h3 class="footer__heading">VÀO CỦA HÀNG TRÊN ỨNG DỤNG</h3>
                     <div class="footer__qr">
                         <img src="./asset/img/qr-code.png" alt="" class="footer__qr-img">
@@ -985,7 +1215,7 @@
                         <a href="#" class="footer-end__law-link">CHÍNH SÁCH BẢO MẬT</a>
                     </li>
                     <li class="footer-end__law-item">
-                        <a href="#" class="footer-end__law-link">QUIY CHẾ HOẠT ĐỘNG</a>
+                        <a href="#" class="footer-end__law-link">QUY CHẾ HOẠT ĐỘNG</a>
                     </li>
                     <li class="footer-end__law-item">
                         <a href="#" class="footer-end__law-link">CHÍNH SÁCH VẬN CHUYỂN</a>
@@ -994,7 +1224,7 @@
                         <a href="#" class="footer-end__law-link">CHÍNH SÁNH TRẢ HÀNG VÀ HOÀN TIỀN</a>
                     </li>
                 </ul>
-                <p class="footer-end__text">© 2021 - Bản quyền thuộc về <a href="https://www.facebook.com/hung.le.1280" target="_blank" rel="noopener noreferrer">@Lehung1881</a></p>
+                <p class="footer-end__text">©2023 - Design by <a href="https://www.facebook.com/hung.le.1280" target="_blank" rel="noopener noreferrer">@Lehung1881</a></p>
             </div>
         </div>
     </footer>

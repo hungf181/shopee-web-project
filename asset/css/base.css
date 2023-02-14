@@ -4,6 +4,7 @@
     --black-color: #000;
     --text-color: #333;
     --bg-hover: #f4f4f4;
+    --height-sort-bar: 46px;
     --header-height: 120px;
     --header-navbar-height: 28px;
     --header-with-search-height: calc(var(--header-height) - var(--header-navbar-height));
@@ -18,11 +19,6 @@ html{
     font-family: 'Roboto', sans-serif;
 }
 
-.grid{
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
-}
 .grid__full-width{
     width: 100%;
 }
