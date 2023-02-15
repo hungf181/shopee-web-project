@@ -872,7 +872,7 @@
 }
 .mobile-category__item{
     flex-shrink: 0;
-    margin: 0 5px;
+    margin-right: 10px;
 }
 .mobile-category__item:nth-of-type(3n + 2) .mobile-category__link{
     background-color: #87afd8;
@@ -1223,5 +1223,5 @@ i.home-product-item__action-like-icon-fill{
 }
 .footer-end__text a{
     font-size: 1.3rem;
-    color: #737373;
+    color: var(--primary-color);
 }
